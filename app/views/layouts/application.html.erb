@@ -20,6 +20,11 @@
 				<li><a href="http://www..../news">News</a></li>
 				<li><a href="http://www..../contact">Contact</a></li>
 			</ul>
+			<div class="time">
+				<%= Time.now.to_s(:db) %><br>
+				Last visited: <%= cookies[:last_visited_str] %>
+				<%= @time_diff %>
+			</div>
 		</div>
 		<div id="main">
 			<%= yield %>
