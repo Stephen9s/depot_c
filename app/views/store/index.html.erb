@@ -5,11 +5,11 @@
 <h1>Your Pragmatic Catalog</h1>
 
 <% @products.each do |product| %>
-	<div class="entry">
-		<%= image_tag(product.image_url) %>
-		<h3><%= product.title %></h3>
-		<p><%= sanitize(product.description) %></p>
-		<% if product.quantity_store >= 0 && product.quantity_online >= 0%>
+	<% if product.quantity_store >= 0 && product.quantity_online >= 0%>
+		<div class="entry">
+			<%= image_tag(product.image_url) %>
+			<h3><%= product.title %></h3>
+			<p><%= sanitize(product.description) %></p>
 			<% if product.quantity_store == 0%>
 				<div class="price_line">
 					<span class="price"><%= number_to_currency(product.price, :unit => "&pound") %></span>
@@ -29,6 +29,6 @@
 					<%= button_to 'Add to Cart', line_items_path(product_id: product)%>
 				</div>
 			<% end %>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
 <% end %>
