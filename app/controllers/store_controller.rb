@@ -27,5 +27,9 @@ class StoreController < ApplicationController
       end
     end
     
+    if session[:counter]
+      session[:counter] += 1
+    end
+    
   end
 end

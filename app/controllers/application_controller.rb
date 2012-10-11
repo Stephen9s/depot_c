@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     rescue ActiveRecord::RecordNotFound
       cart = Cart.create
       session[:cart_id] = cart.id
+      session[:counter] = 0;
       cart
     end
 end

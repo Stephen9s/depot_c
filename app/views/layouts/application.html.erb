@@ -15,7 +15,7 @@
 	<div id="columns">
 		<div id="side">
 			<ul>
-				<li><a href="http://www....">Home</a></li>
+				<li><%= link_to "Home", store_path %></li>
 				<li><a href="http://www..../faq">Questions</a></li>
 				<li><a href="http://www..../news">News</a></li>
 				<li><a href="http://www..../contact">Contact</a></li>
@@ -24,6 +24,13 @@
 				<%= Time.now.to_s(:db) %><br>
 				Last visited: <%= cookies[:last_visited_str] %>
 				<%= @time_diff %>
+			</div>
+			<div class="counter">
+				<% if session[:counter] %>
+					You have been here <%= pluralize(session[:counter], 'time')%>.
+				<% else %>
+					Please add to the cart!
+				<% end %>
 			</div>
 		</div>
 		<div id="main">

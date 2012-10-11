@@ -19,7 +19,7 @@
   background: #9c9;
   padding: 10px;
   border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
+  font: small-caps 40px/40px "Times New Roman", sans-serif;
   color: #282;
   text-align: center;
 
@@ -53,6 +53,10 @@
     background: #141;
     
     .time {
+      color: #ffffff;
+    }
+    
+    .counter {
       color: #ffffff;
     }
 
